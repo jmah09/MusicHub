@@ -9,4 +9,4 @@ const Header = () => {
 }
 
 //make component available to other areas of the app 
-
+export default Header; 
