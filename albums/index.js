@@ -1,9 +1,17 @@
-/**
- * @format
- */
+//Import a library to help create component
+import React from 'react';
+import {Text, View, AppRegistry} from 'react-native';
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => App);
+//create a component - an object that displays something on the screen - a component is a javacsript function that returns JSX
+// JSX (looks like html) babel turns JSX into Javascript 
+// JSX is just a mask over normal function calls 
+const App = () => (
+    <Text> Some Text </Text>
+)
+
+//render to device
+// have to register at least one component to application 
+    //-> render application called 'albums', and pass first component to our application as 2nd argument to register component
+//App component is the root component and its the only one that uses AppRegistry 
+AppRegistry.registerComponent('albums', () => App);
