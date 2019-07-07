@@ -2,6 +2,7 @@
 import React from 'react';
 import {Text, View, AppRegistry} from 'react-native';
 import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
 //create a component - an object that displays something on the screen - a component is a javacsript function that returns JSX
 // JSX (looks like html) babel turns JSX into Javascript 
