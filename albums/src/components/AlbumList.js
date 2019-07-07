@@ -12,14 +12,18 @@ class AlbumList extends Component {
     //lifecycle method - componentDidMount() gets auto called as soon as the component gets rendered to the screen
     componentDidMount() {
         //(2) when we've fetched the data, tell our component to update the state with setState
-        axios.get('https://rallycoding.herokuapp.com/api/music_albums').then(resp => this.setState({ albums: response.data }));
+        axios.get('https://rallycoding.herokuapp.com/api/music_albums').then(resp => this.setState({ albums: resp.data }));
+    }
+
+    renderAlbums() {
+        return this.state.albums.map(album => <Text>{album.title}</Text>);
     }
 
     render () {
         //(3) tell render method to make use of the state
         return (
             <View>
-                <Text>some text</Text>
+                <Text>asdfadsf</Text>
             </View>
         );
     }
