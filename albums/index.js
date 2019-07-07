@@ -11,7 +11,12 @@ const App = () => (
     // we can use props to pass data from parent to child component
     // pass in property name called headerText that has a value of "Albums"
     // so that when header is rendered, we will take the props obj from parent, it will have property called headerText and value will be shown in JSX in header file
-    <Header headerText = {'Albums'}/>
+
+    //we can only return a single top level tag, so we need to wrap multiple tags in a single view tag
+    <View>
+        <Header headerText = {'Albums'}/>
+        <AlbumList/>
+    </View>
 );
 
 //render to device
