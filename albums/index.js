@@ -1,6 +1,6 @@
 //Import a library to help create component
 import React from 'react';
-import {Text, View, AppRegistry} from 'react-native';
+import {View, AppRegistry} from 'react-native';
 import Header from './src/components/Header';
 import AlbumList from './src/components/AlbumList';
 
@@ -15,7 +15,7 @@ const App = () => (
     //we can only return a single top level tag, so we need to wrap multiple tags in a single view tag
     <View>
         <Header headerText = {'Albums'}/>
-        <AlbumList/>
+        <AlbumList />
     </View>
 );
 
