@@ -1,6 +1,8 @@
 import React from 'react';
 import {View} from 'react-native';
 
+//anytime we pass in a component to a component that we wrote, the component will show up as props object as props.children
+//Card will render any compontents we add to Card 
 const Card = (props) => {
     return (
         <View style={styles.containerStyle}>
