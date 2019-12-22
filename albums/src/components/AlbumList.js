@@ -4,8 +4,9 @@ import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 // class based componenet used when fetching data or component that requires helper methods
 //when designing a class based method we must define exactly one method that returns some JSX - 
-    //so we add a render method that takes whatever JSX is returned inside and show it on the screen
+    //so we add a render method that takes whatever JSX is returned inside render method and show it on the screen
 class AlbumList extends Component {
+    // Component level state to tell components to re render to screen with data (3 STEPS)
     //(1) set initial state for component with a class level property (STATE ONLY available to CLASS based components)
     state = { albums: [] };
 
@@ -13,12 +14,16 @@ class AlbumList extends Component {
     //lifecycle method - componentDidMount() gets auto called as soon as the component gets rendered to the screen
     componentDidMount() {
         //(2) when we've fetched the data, tell our component to update the state with setState
+        //state is how react handles content changing on the screen
+        // this.state can only be initilized not modified - modified thorugh this.setState();  
         axios.get('https://rallycoding.herokuapp.com/api/music_albums')
         .then(resp => this.setState({ albums: resp.data }));
+        // the difference between STATE and PROPS is - state is used for internal record keeping
+        // PROPs is used for parent to child component communication
     }
 
     renderAlbums() {
-        //producing an albums array and rendering it into JSX component
+        // producing an albums array and rendering it into a JSX component
         // when React re-renders component it needs to know which unique component needs to be re rendered and which one that doesn't
         // which is why we need a unique key and the same value across all re renders of the list
         // but now we don't want to show text, but instead Album Detail
